@@ -74,7 +74,7 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
       <div class="error-note">
         The requested chainline is not offered for any BB and spindle combination
         (±1 mm).<br>
-        Please adjust your chainline.
+        Please adjust your chainline or review available spindle options.
       </div>`;
     return;
   }
@@ -112,4 +112,3 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     resultsDiv.appendChild(div);
   });
 });
-
