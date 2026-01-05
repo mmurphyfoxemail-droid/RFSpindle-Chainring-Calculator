@@ -53,7 +53,7 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     return;
   }
 
-  // ----- Step 1: Find all spindles that offer this chainline (±1 mm) -----
+  //  1: Find all spindles that offer this chainline (±1 mm) -----
   const spindlesWithChainline = [];
 
   spindles.forEach(sp => {
@@ -66,10 +66,10 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     });
   });
 
-  // ----- Step 2: Decide which error / result to show -----
+  // 2: Decide which error / result to show -----
 
   if(spindlesWithChainline.length === 0){
-    // 1️⃣ Chainline not offered for any spindle
+    // Chainline not offered for any spindle
     resultsDiv.innerHTML = `
       <div class="error-note">
         The requested chainline is not offered for any BB and spindle combination
@@ -79,7 +79,7 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     return;
   }
 
-  // 2️⃣ Filter by BB compatibility
+  // Filter by BB compatibility
   const compatibleSpindles = spindlesWithChainline.filter(item => {
     const compatList = spindleBBcompat[item.spindle.name] || [];
     return compatList.includes(bb) && item.spindle.bbType === bbType;
@@ -96,7 +96,7 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     return;
   }
 
-  // 3️⃣ Show results (chainline + BB compatible)
+  // Show results (chainline + BB compatible)
   compatibleSpindles.forEach(item => {
     const sp = item.spindle;
     const r = item.ring;
@@ -112,4 +112,5 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     resultsDiv.appendChild(div);
   });
 });
+
 
