@@ -1,87 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spindle and Chainring Selector</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spindle and Chainring Selector</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Spindle and Chainring Selector</h1>
-    <form id="selector-form">
-      <label>BB Type:</label>
-      <select id="bbType">
-        <option value="24">24mm</option>
-        <option value="30">30mm</option>
-      </select>
 
-      <label>Drivetrain:</label>
-      <select id="drivetrain">
-        <option value="SHI12">Shimano 12sp</option>
-        <option value="NW10_11">Shimano 10–11sp</option>
-        <option value="MICROSHIFT">Microshift</option>
-        <option value="NW10_12">Sram 10–12sp</option>
-        <option value="SRAM_TX">Sram Transmission</option>
-      </select>
+<div class="container">
+  <h1>Spindle and Chainring Calculator</h1>
 
-      <label>Bottom Bracket:</label>
-      <select id="bb">
-        <option>BSA 68/73mm</option>
-        <option>BB92</option>
-        <option>BB89</option>
-        <option>BB30 68/73mm</option>
-        <option>PF30 68/73mm</option>
-        <option>392EVO T47 68/73mm</option>
-        <option>BSA 83mm</option>
-        <option>BB107</option>
-        <option>BB104</option>
-        <option>PF30 83mm</option>
-        <option>BSA 100mm</option>
-        <option>BB124</option>
-        <option>BB121</option>
-        <option>PF30 100mm</option>
-        <option>BB132</option>
-        <option>BSA 120mm</option>
-        <option>BB144</option>
-        <option>BB141</option>
-        <option>PF30 120mm</option>
-      </select>
+  <form id="selector-form">
+    <label>BB Type:</label>
+    <select id="bbType">
+      <option value="24">24mm</option>
+      <option value="30">30mm</option>
+    </select>
 
-      <label>Requested Chainline (mm):</label>
-      <input type="number" id="chainline" step="0.5" placeholder="e.g. 55">
+    <label>Drivetrain:</label>
+    <select id="drivetrain">
+      <option value="SHI12">Shimano 12sp</option>
+      <option value="NW10_11">Shimano 10–11sp</option>
+      <option value="MICROSHIFT">Microshift</option>
+      <option value="NW10_12">Sram 10–12sp</option>
+      <option value="SRAM_TX">Sram Transmission</option>
+    </select>
 
-      <button type="submit">Calculate</button>
-    </form>
+    <label>Bottom Bracket:</label>
+    <select id="bb">
+      <option>BSA 68/73mm</option>
+      <option>BB92</option>
+      <option>BB89</option>
+      <option>BB30 68/73mm</option>
+      <option>PF30 68/73mm</option>
+      <option>392EVO T47 68/73mm</option>
+      <option>BSA 83mm</option>
+      <option>BB107</option>
+      <option>BB104</option>
+      <option>PF30 83mm</option>
+      <option>BSA 100mm</option>
+      <option>BB124</option>
+      <option>BB121</option>
+      <option>PF30 100mm</option>
+      <option>BB132</option>
+      <option>BSA 120mm</option>
+      <option>BB144</option>
+      <option>BB141</option>
+      <option>PF30 120mm</option>
+    </select>
 
-    <div id="results"></div>
+    <label>Requested Chainline (mm):</label>
+    <input type="number" id="chainline" step="0.5" placeholder="e.g. 55" required>
 
-    <h2>FAQ</h2>
-<div class="faq">
-  <details>
-    <summary>The crankset I want doesn't come with the right spindle!</summary>
-    <p>You can purchase the correct spindle from our <a href="https://www.raceface.ca/collections/spare-parts">spare parts page</a>.</p>
-  </details>
-  <details>
-    <summary>What is BB Type?</summary>
-    <p>BB Type refers to the spindle diameter of the crankset. 24mm cranks include Aeffect, Aeffect R, Ride. 30mm cranks include Atlas, Era, Turbine.</p>
-  </details>
-  <details>
-    <summary>What is "DH"?</summary>
-    <p>DH refers to the spindle type. DH spindles have longer splines and are only compatible with Atlas Cranks.</p>
-  </details>
-  <details>
-    <summary>I see multiple spindle options — which should I pick?</summary>
-    <p>You might see multiple spindle lengths that work for your setup. Most people prefer the shortest possible spindle to maintain a natural Q-Factor, but others prefer a wider stance. Always double-check your minimum Q-Factor for your frame. See the linked doc for measurements: <a href="https://res.cloudinary.com/fox-factory/image/upload/v1600385412/images/d9715b92f0f94eadb807eb34529905adfc447228_Crank_Q_factors_and_chainlines___16th_April_2020.pdf">Q-Factors & Chainlines</a>.</p>
-  </details>
-  <details>
-    <summary>What is chainline? How do I find out?</summary>
-    <p>Many brands provide chainline specs on their websites, but for others you may need to contact them directly. There is some correlation between your bike's hub spacing and chainline, but it’s not always exact. Park Tool has a great video explaining chainline: <a href="https://www.parktool.com/en-int/blog/repair-help/chainline-concepts" target="_blank">Watch here</a>. We also have a chart available to estimate it, but you should confirm your measurements before buying.</p>
-  </details>
-  <details>
-    <summary>I can't find a chainring that matches!</summary>
-    <p>Many outputs of the calculator will list NW DMW, while we hope to have an alloy version soon. That specific combination is only available in our ERA Ring: <a href="https://www.raceface.ca/products/era-chainring?srsltid=AfmBOorKxlZNpxKMqSUy7MHa3DYE-3q7I1QVyRzx4aESTPTgB_R7RewC" target="_blank">View ERA Chainring</a>.</p>
-  </details>
+    <button type="submit">Calculate</button>
+  </form>
+
+  <div id="results"></div>
+  <div><small><i>Chainrings are <b>usually</b> considered within specification if their measurements fall within ±1 mm. Results will be displayed based on this tolerance.</i> </small></div>
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details>
+      <summary>The crankset I want doesn't come with the right spindle!</summary>
+      <p>
+        You can purchase the correct spindle from our
+        <a href="https://www.raceface.ca/collections/spare-parts" target="_blank">spare parts page</a>.
+      </p>
+    </details>
+
+    <details>
+      <summary>What is BB Type?</summary>
+      <p>
+        BB Type refers to the spindle diameter of the crankset.
+        24mm cranks include Aeffect, Aeffect R, Ride.
+        30mm cranks include Atlas, Era, Turbine.
+      </p>
+    </details>
+
+    <details>
+      <summary>What is "DH"?</summary>
+      <p>
+        DH refers to the spindle type. DH spindles have longer splines
+        and are only compatible with Atlas Cranks.
+      </p>
+    </details>
+
+    <details>
+      <summary>I see multiple spindle options — which should I pick?</summary>
+      <p>
+        You might see multiple spindle lengths that work for your setup.
+        Most people prefer the shortest possible spindle to maintain a natural
+        Q-Factor, but others prefer a wider stance.
+      </p>
+    </details>
+
+    <details>
+      <summary>What is chainline? How do I find out?</summary>
+      <p>
+        Many brands provide chainline specs on their websites, but for others
+        you may need to contact them directly. Park Tool has a great video
+        explaining chainline concepts.
+      </p>
+      <a href="https://www.parktool.com/en-int/blog/repair-help/chainline-concepts" target="_blank">
+        Park Tool Chainline Guide
+      </a>
+    </details>
+
+    <details>
+      <summary>I can't find a chainring that matches!</summary>
+      <p>
+        Many outputs of the calculator will list NW DMW.
+        That specific combination is only available in our ERA Ring:
+        <a href="https://www.raceface.ca/products/era-chainring" target="_blank">View ERA Chainring</a>.
+      </p>
+    </details>
+  </div>
 </div>
 
 <script src="selector.js"></script>
