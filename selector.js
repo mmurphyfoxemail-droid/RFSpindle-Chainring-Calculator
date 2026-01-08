@@ -53,7 +53,7 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     return;
   }
 
-  //  1: Find all spindles that offer this chainline (±1 mm) -----
+  //  1: Find all spindles that offer this chainline (±1 mm)
   const spindlesWithChainline = [];
 
   spindles.forEach(sp => {
@@ -66,7 +66,7 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     });
   });
 
-  // 2: Decide which error / result to show -----
+  // 2: Decide which error / result to show 
 
   if(spindlesWithChainline.length === 0){
     // Chainline not offered for any spindle
@@ -112,6 +112,7 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     resultsDiv.appendChild(div);
   });
 });
+
 
 
 
