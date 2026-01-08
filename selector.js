@@ -1,4 +1,4 @@
-// ----- Spindles / Chainlines -----
+// Spindles / Chainlines
 const spindles = [
   {name:"136",bbType:30,DM:52,DMW:55,flip:58.5,tooth:"NW"},
   {name:"136DH",bbType:30,DM:52,DMW:55,flip:58.5,tooth:"NW",DH:true},
@@ -11,7 +11,7 @@ const spindles = [
   {name:"190",bbType:24,DM:78.5,DMW:81.5,flip:85,tooth:"NW"}
 ];
 
-// ----- BB Compatibility -----
+// BB Compatibility
 const spindleBBcompat = {
   "136":["BSA 68/73mm","BB92","BB89","BB30 68/73mm","PF30 68/73mm","392EVO T47 68/73mm"],
   "136DH":["BSA 68/73mm","BB92","BB89","BB30 68/73mm","PF30 68/73mm","392EVO T47 68/73mm"],
@@ -24,7 +24,7 @@ const spindleBBcompat = {
   "190":["BSA 100mm","BB124","BB121","PF30 100mm"]
 };
 
-// ----- Drivetrain mapping -----
+//Drivetrain mapping
 const dtMap = {
   "SHI12":"SHI12",
   "MICROSHIFT":"NW",
@@ -33,7 +33,7 @@ const dtMap = {
   "SRAM_TX":null
 };
 
-// ----- Form Handler -----
+// Form Handler
 document.getElementById('selector-form').addEventListener('submit', function(e){
   e.preventDefault();
 
@@ -112,5 +112,6 @@ document.getElementById('selector-form').addEventListener('submit', function(e){
     resultsDiv.appendChild(div);
   });
 });
+
 
 
